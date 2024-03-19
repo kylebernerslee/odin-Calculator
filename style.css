@@ -16,5 +16,70 @@ body {
 }
 
 .calculator {
-    
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculator div {
+    margin:4px;
+}
+
+.buttons {
+    display:flex;
+    flex-wrap: wrap;
+    width:240px;
+    justify-content: space-between;
+}
+
+.button {
+    width:60px;
+    height:60px;
+    border: black solid 1px;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 0px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 0px;
+    transform: translate(3px,3px);
+}
+
+.button:active {
+    box-shadow: 0px 0px 0px;
+    transform: translate(3px,3px);
+    background-color:rgb(246, 242, 232);
+}
+
+.sButton {
+    width:30px;
+    height:30px;
+    background-color:darksalmon;
+    margin-top:15px !important;
+}
+
+
+.screenProgress {
+    background-color:darksalmon;
+    height: 20px;
+    width: 240px;
+    border: black solid 1px;
+    border-radius: 50px;
+}
+
+.screenSolution {
+    background-color: white;
+    height:40px;
+    width:240px;
+    border: black solid 1px;
+    border-radius: 50px;    
+}
+
+.result {
+    background-color:lightcoral;
 }
