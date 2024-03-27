@@ -15,11 +15,10 @@ numbers.forEach((button) => {
 resultButton.addEventListener("click", getResult, true);
 
 function getValue() {
-
-
+    //debugger;
     screenProgress.innerText += this.innerText;
-
-    if(this.innerText != "+" || "-" || ":" || "/")
+    console.log(this.innerText);
+    if(this.innerText != "+" && "-" && ":" && "/")
     {
         if(operator != "")
         {
@@ -39,6 +38,7 @@ function getValue() {
         else
         {
             operator += this.innerText;
+            console.log("this operator:"+operator);
         }
     }
 
@@ -48,9 +48,14 @@ function getValue() {
 }
 
 function getResult() {
+
+    number1 = parseInt(number1);
+    number2 = parseInt(number2);
     
     switch (operator) {
         case "+":
+            calculation = number1 + number2;
+            console.log(calculation);
             break;
         case "-":
             break;
@@ -63,6 +68,8 @@ function getResult() {
     number1 = "";
     number2 = "";
     operator = "";
+    screenProgress.innerText = "";
+    screenSolution.innerText = calculation;
 }
 
 function add (num1, num2)
