@@ -17,8 +17,12 @@ resultButton.addEventListener("click", getResult, true);
 function getValue() {
     //debugger;
     screenProgress.innerText += this.innerText;
-    console.log(this.innerText);
-    if(this.innerText != "+" && "-" && ":" && "/")
+    console.log("value gotten: " + this.innerText);
+    if(this.innerText == "=")
+    {
+
+    }
+    else if(!["+", "-", ":", "*"].includes(this.innerText))
     {
         if(operator != "")
         {
@@ -43,7 +47,7 @@ function getValue() {
     }
 
 
-    console.log(number1, number2, operator);
+    console.log("n1:" + number1, "op:" + operator, "n2:"+number2);
 
 }
 
@@ -58,10 +62,16 @@ function getResult() {
             console.log(calculation);
             break;
         case "-":
+            calculation = number1 - number2;
+            console.log(calculation);
             break;
         case "*":
+            calculation = number1 * number2;
+            console.log(calculation);
             break;
-        case "/":
+        case ":":
+            calculation = number1 / number2;
+            console.log(calculation);
             break;
     }
     
@@ -70,24 +80,4 @@ function getResult() {
     operator = "";
     screenProgress.innerText = "";
     screenSolution.innerText = calculation;
-}
-
-function add (num1, num2)
-{
-    return parseInt(num1) + parseInt(num2);
-}
-
-function subtract (num1, num2)
-{
-    return parseInt(num1) - parseInt(num2);
-}
-
-function multiply(num1, num2)
-{
-    return parseInt(num1) * parseInt(num2);
-}
-
-function subtract(num1, num2)
-{
-    return parseInt(num1) / parseInt(num2);
 }
